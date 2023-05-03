@@ -1,0 +1,217 @@
+@import url("open-sans.css");
+
+body, html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#root, .container {
+  height: 100%;
+  width: 100%;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f6fa;
+  font-family: "Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.radial-nav {
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+}
+
+.employee > .info-container .info {
+  height: 180px;
+  width: 180px;
+  transform: scale(0);
+}
+
+.employee > .info-container .info,
+.employee > .info-container,
+.radial-nav .info-container::before{
+transition: transform 0.3s ease-in-out, transform-origin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.radial-nav > ul > li > .employee {
+  transform: scale(1);
+}
+
+.active .info {
+  color: darkmagenta;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.active > .info-container .info {
+  transform: scale(1) translate(65%, 65%);
+}
+
+.active.open > ul > li > .employee > .info-container .info {
+  transform: scale(0.5);  
+}
+
+.info-container .info .img-container {
+  border: 0 solid cornflowerblue;
+  transition: border 0.3s ease-in-out;
+}
+
+
+.radial-nav ul {
+  pointer-events: none;
+}
+
+.employee > .info-container .info {
+  pointer-events: none;
+}
+
+.employee.active > .info-container .info,
+.employee.active > ul > li > .employee > .info-container .info {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.info-container {
+  transform-origin:115% 115%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 180px;
+  width: 180px;
+}
+
+.radial-nav > .employee {
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.radial-nav ul {
+  width: 180px;
+  height: 180px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.radial-nav li {
+  display: inline-block;
+  transform-origin:115% 115%;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.radial-nav li:has(> .open) {
+    z-index: 9;
+}
+
+.radial-nav .info-container::before {
+  content: "";
+  display: block;
+  background: cornflowerblue;
+  height: 35px;
+  width: 3px;
+  transform-origin: center top;
+  opacity: 0;
+  border-radius: 2px;
+  position: absolute;
+  transform: rotate(-45deg) translate(0, 170px) scaleY(0);
+  z-index: -1;
+}
+
+.employee.active.open > ul > li > .employee > .info-container::before {
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, 170px);
+}
+
+.radial-nav .active > .info-container::before {
+  opacity: 0;
+}
+
+.radial-nav .info.hidden {
+  opacity: 0;
+}
+
+.radial-nav .info {
+  color: #666;
+  text-decoration: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  position: absolute;
+}
+
+.radial-nav .info h3 {
+  margin: 0;
+  line-height: 1.3em;
+  color: white;
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  position: absolute;
+  opacity: 1;
+  font-size: 18px;
+  bottom: 0;
+  border-radius: 50%;
+  background: cornflowerblue;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0.4em 0.5em;
+  width: 130%;
+  margin-left: -15%;
+}
+
+.radial-nav .parent-is-active span.name {
+  display: none;
+}
+
+.radial-nav .active > .info-container span.name {
+  display: inline-block;
+  margin-right: 0.2em;
+}
+
+.radial-nav .info .img-container {
+  line-height: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.radial-nav .active > .info-container .img-container {
+  border: 4px solid cornflowerblue;
+}
+
+.radial-nav .info img {
+  max-width: 100%;
+  margin-left: 0;
+  bottom: -1em;
+}
+
+.radial-nav .info.root a h3, .active > .info-container h3 {
+  display: block;
+  height: auto;
+  opacity: 1;
+  font-size: 14px;
+  bottom: -0.5em;
+  width: 120%;
+  margin-left: -10%;
+}
