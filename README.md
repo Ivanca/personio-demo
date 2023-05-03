@@ -1,17 +1,7 @@
-## Running React on Repl.it
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+# Front-end demo
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+This is an example of my abilities as Front-end developer as well as a possible quick way to show the organization's employees on mobile devices,
+the code uses the same JSON data format it currently uses so it would be straigh-forward to add it to the real application.
 
-Using the two in conjunction is one of the fastest ways to build a web app.
-
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
-
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
-
-### Typescript
-
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+![personio](https://user-images.githubusercontent.com/907138/234661287-51ecc89c-627f-43d5-b95a-c9846b71bea4.gif)
